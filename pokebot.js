@@ -22,7 +22,7 @@ client.on('message', message => {
         var rawUserTag = message.author.tag;
         currentUserTag = rawUserTag.replace("#", "ID");
         function checkIfNew(user) {
-            return user = currentUserTag;
+            return user == currentUserTag;
         }
         var newUser = regUserArray.find(checkIfNew);
         if (newUser == currentUserTag) {
