@@ -1,0 +1,25 @@
+{
+
+  "name": "pokebot4000",
+
+  "description": "mcserver",
+
+  "version": "0.0.1alpha",
+
+  "main": "pokebot.js",
+
+  "scripts": {
+
+    "start": "node pokebot.js"
+
+  },
+
+  "dependencies": {
+
+    "discord.js": "12.2.0",
+
+    "request": "2.81.0"
+
+  }
+
+}
