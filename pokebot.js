@@ -22,14 +22,14 @@ client.on('message', message => {
         var rawUserTag = message.author.tag;
         currentUserTag = rawUserTag.replace("#", "ID");
         function checkIfNew(user) {
-            return user == currentUserTag;
+            return user === currentUserTag;
         }
         var newUser = regUserArray.find(checkIfNew);
         if (newUser == currentUserTag) {
             message.reply("You are already registered!");
             console.log(currentUserTag + ' is already registered');
         } else {
-            eval('var ' + currentUserTag + '= {name:' + message.author.tag + 'level:5};');
+            eval('var ' + currentUserTag + '= ' + message.author.tag + ';');
             eval('regUserArray.push(' + currentUserTag + ');');
             console.log('Successfully registered ' + currentUserTag);
             message.reply("You were successfully registered!");
