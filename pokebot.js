@@ -13,8 +13,9 @@ var headToHead = process.env.headtoHeadCommand;
 var helpCommand = process.env.helpCommand;
 var regCommand = process.env.regCommand;
 //link envs
-var dummy = "dummy";
-var regUserArray = [dummy];
+var rawUserList = fs.readFileSync('userlist.json');
+var regUserArray = JSON.parse(rawUserList);
+console.log("Users: " + regUserArray);
 var userArray;
 //declare variables
 
