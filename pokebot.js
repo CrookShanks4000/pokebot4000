@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+var fs = require('fs');
 const client = new Discord.Client();
 client.login(process.env.BOT_TOKEN);
 client.on('ready', () => {
@@ -37,7 +38,10 @@ client.on('message', message => {
         }    
         console.log(regUserArray.toString());
         jsonUsers = JSON.stringify(regUserArray);
-        localStorage.setItem("Usernames", jsonUsers);
+        fs.writefile('userlist.json', jsonUsers, function (err) {
+            if (err) throw err;
+            console.log("list saved");
+        });
     }
     if (message.content === helpCommand) {
         //list commands
