@@ -38,7 +38,7 @@ client.on('message', message => {
         }    
         console.log(regUserArray.toString());
         jsonUsers = JSON.stringify(regUserArray);
-        fs.writefile('userlist.json', jsonUsers, function (err) {
+        fs.writeFile('userlist.json', jsonUsers, function (err) {
             if (err) throw err;
             console.log("list saved");
         });
