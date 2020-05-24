@@ -12,14 +12,13 @@ var headToHead = process.env.headtoHeadCommand;
 var helpCommand = process.env.helpCommand;
 var regCommand = process.env.regCommand;
 //link environmental variable(s)
-
+var regUserArray;
 var userArray;
 //declare variables
 
 client.on('message', message => {
     if (message.content === regCommand) {
         //register new user
-        var regUserArray = [];
         var rawUserTag = message.author.tag;
         currentUserTag = rawUserTag.replace("#", "ID");
         function checkIfNew(user) {
