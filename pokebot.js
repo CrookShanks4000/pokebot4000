@@ -12,7 +12,7 @@ var headToHead = process.env.headtoHeadCommand;
 var helpCommand = process.env.helpCommand;
 var regCommand = process.env.regCommand;
 //link environmental variable(s)
-var regUserArray = [];
+var regUserArray;
 var userArray;
 //declare variables
 
@@ -29,7 +29,7 @@ client.on('message', message => {
             message.reply("You are already registered!");
             console.log(currentUserTag + ' is already registered');
         } else {
-            eval('var ' + currentUserTag + ';');
+            eval('var ' + currentUserTag + '= {name:' + message.author.tag + 'level:5};');
             eval('regUserArray.push(' + currentUserTag + ');');
             console.log('Successfully registered ' + currentUserTag);
             message.reply("You were successfully registered!");
