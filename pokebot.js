@@ -15,7 +15,8 @@ var helpCommand = process.env.helpCommand;
 client.on('message', message => {
     if (message.content === pokeCommand) {
         //random wild pokemon
-        var currentServer = message.guild;
+        var currentServer = message.guild.name;
+        console.log(currentServer);
         message.reply(currentServer);
     }
     if (message.content === helpCommand) {
