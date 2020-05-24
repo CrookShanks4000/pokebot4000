@@ -10,14 +10,31 @@ var pokeCommand = process.env.pokeCommand;
 var trainerCommand = process.env.trainerCommand;
 var headToHead = process.env.headtoHeadCommand;
 var helpCommand = process.env.helpCommand;
+var regCommand = process.env.regCommand;
 //link environmental variable(s)
 
+var userArray;
+//declare variables
+
 client.on('message', message => {
-    if (message.content === pokeCommand) {
-        //random wild pokemon
-        var currentServer = message.guild.name;
-        console.log(currentServer);
-        message.reply(currentServer);
+    if (message.content === regCommand) {
+        //register new user
+        var regUserArray = [];
+        var currentUserTag = message.author.tag;
+        function checkIfNew(user) {
+            return user = currentUserTag;
+        }
+        var newUser = regUserArray.find(checkIfNew);
+        if (newUser == currentUserTag) {
+            message.reply("You are already registered!");
+            console.log(currentUserTag + ' is already registered');
+        } else {
+            eval('var ' + currentUserTag + ';');
+            eval('regUserArray.push(' + currentUserTag + ');');
+            console.log('Successfully registered ' + currentUserTag);
+            message.reply("You were successfully registered!");
+        }    
+        console.log(regUserArray.toString());
     }
     if (message.content === helpCommand) {
         //list commands
