@@ -12,7 +12,7 @@ var headToHead = process.env.headtoHeadCommand;
 var helpCommand = process.env.helpCommand;
 var regCommand = process.env.regCommand;
 //link environmental variable(s)
-var regUserArray;
+var regUserArray = [];
 var userArray;
 //declare variables
 
