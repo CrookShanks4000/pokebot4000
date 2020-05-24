@@ -11,7 +11,7 @@ var trainerCommand = process.env.trainerCommand;
 var headToHead = process.env.headtoHeadCommand;
 var helpCommand = process.env.helpCommand;
 var regCommand = process.env.regCommand;
-//link environmental variable(s)
+//link envs
 var dummy = "dummy";
 var regUserArray = [dummy];
 var userArray;
@@ -30,12 +30,14 @@ client.on('message', message => {
             message.reply("You are already registered!");
             console.log(currentUserTag + ' is already registered');
         } else {
-            eval('var ' + currentUserTag + ' = "' + currentUserTag + '";');
+            eval('var ' + currentUserTag + ' = "' + message.author.username + '";');
             eval('regUserArray.push(' + currentUserTag + ');');
             console.log('Successfully registered ' + currentUserTag);
             message.reply("You were successfully registered!");
         }    
         console.log(regUserArray.toString());
+        jsonUsers = JSON.stringify(regUserArray);
+        localStorage.setItem("Usernames", jsonUsers);
     }
     if (message.content === helpCommand) {
         //list commands
