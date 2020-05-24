@@ -20,7 +20,8 @@ client.on('message', message => {
     if (message.content === regCommand) {
         //register new user
         var regUserArray = [];
-        var currentUserTag = message.author.tag;
+        var rawUserTag = message.author.tag;
+        currentUserTag = rawUserTag.replace("#", "ID");
         function checkIfNew(user) {
             return user = currentUserTag;
         }
