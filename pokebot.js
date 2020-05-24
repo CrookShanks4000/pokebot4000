@@ -17,9 +17,8 @@ client.on('message', message => {
         //random wild pokemon
         var currentServer = message.guild;
         message.reply(currentServer);
-}
+    }
     if (message.content === helpCommand) {
         //list commands
     }
-
-);
+});
