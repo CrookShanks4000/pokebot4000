@@ -30,7 +30,7 @@ client.on('message', message => {
             message.reply("You are already registered!");
             console.log(currentUserTag + ' is already registered');
         } else {
-            eval('var ' + currentUserTag + ' = ' + message.author.username + ';');
+            eval('var ' + currentUserTag + ' = "' + message.author.username + '";');
             eval('regUserArray.push(' + currentUserTag + ');');
             console.log('Successfully registered ' + currentUserTag);
             message.reply("You were successfully registered!");
