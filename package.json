@@ -15,7 +15,7 @@
   },
 
   "dependencies": {
-
+    "pg": "8.2.1",
     "discord.js": "12.2.0"
   }
 
